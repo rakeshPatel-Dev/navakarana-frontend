@@ -1,12 +1,11 @@
-import { Button } from "@/components/ui/button"
+import { Routes, Route } from "react-router-dom"
+
+import Home from "./pages/Home.jsx"
 
 export default function App() {
   return (
-    <div className="p-6">
-      <Button>Click Me</Button>
-      <Button variant="outline">Outline</Button>
-      <Button variant="ghost">Ghost</Button>
-      <Button size="sm">Small</Button>
-    </div>
+    <Routes>
+      <Route path="*" element={<Home />} />
+    </Routes>
   )
 }

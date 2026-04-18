@@ -4,12 +4,17 @@ import App from './App.jsx'
 import { TooltipProvider } from './components/ui/tooltip'
 import { BrowserRouter } from 'react-router-dom'
 import { Toaster } from 'sonner'
+import { SidebarProvider } from './components/ui/sidebar'
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <TooltipProvider>
-      <Toaster position='top-right' />
-      <App />
-    </TooltipProvider>
-  </BrowserRouter>
+  <div className="dark min-h-screen bg-background text-foreground">
+    <SidebarProvider>
+      <BrowserRouter>
+        <TooltipProvider>
+          <Toaster position='top-right' />
+          <App />
+        </TooltipProvider>
+      </BrowserRouter>
+    </SidebarProvider>
+  </div>
 )
