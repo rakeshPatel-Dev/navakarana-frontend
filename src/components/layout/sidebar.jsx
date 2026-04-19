@@ -29,7 +29,6 @@ function AppSidebar() {
       </SidebarHeader>
       <SidebarSeparator className="" />
 
-
       <SidebarContent className="px-2 py-3">
         <SidebarGroup className="p-0">
           <SidebarGroupLabel className="px-4">
