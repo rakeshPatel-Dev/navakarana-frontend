@@ -55,19 +55,19 @@ function MusicLibraryPage() {
         <Card className="border border-blue-900/30 bg-slate-950/85">
           <CardContent className="p-5">
             <p className="text-sm text-zinc-400">Total tracks</p>
-            <p className="mt-2 text-4xl font-bold text-white">8</p>
+            <p className="mt-2 text-2xl font-bold tracking-tight text-white md:text-3xl">8</p>
           </CardContent>
         </Card>
         <Card className="border border-blue-900/30 bg-slate-950/85">
           <CardContent className="p-5">
             <p className="text-sm text-zinc-400">Published</p>
-            <p className="mt-2 text-4xl font-bold text-white">7</p>
+            <p className="mt-2 text-2xl font-bold tracking-tight text-white md:text-3xl">7</p>
           </CardContent>
         </Card>
         <Card className="border border-blue-900/30 bg-slate-950/85">
           <CardContent className="p-5">
             <p className="text-sm text-zinc-400">Drafts</p>
-            <p className="mt-2 text-4xl font-bold text-white">1</p>
+            <p className="mt-2 text-2xl font-bold tracking-tight text-white md:text-3xl">1</p>
           </CardContent>
         </Card>
       </section>
@@ -101,12 +101,12 @@ function MusicLibraryPage() {
               <div className="space-y-3 p-4">
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
-                    <h3 className="truncate text-2xl font-bold text-white">{track.title}</h3>
-                    <p className="mt-1 text-base text-zinc-400">{track.artist}</p>
+                    <h3 className="truncate text-lg font-bold tracking-tight text-white md:text-xl">{track.title}</h3>
+                    <p className="mt-1 text-sm text-zinc-400 md:text-base">{track.artist}</p>
                   </div>
                   <StatusPill label={track.status} tone={track.status === "Published" ? "green" : "yellow"} />
                 </div>
-                <p className="text-base text-zinc-300">Album: {track.album}</p>
+                <p className="text-sm text-zinc-300 md:text-base">Album: {track.album}</p>
                 <div className="flex items-center justify-between text-sm text-zinc-400">
                   <span>{track.genre}</span>
                   <span>{track.duration}</span>

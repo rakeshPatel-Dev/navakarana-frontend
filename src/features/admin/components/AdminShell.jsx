@@ -32,16 +32,16 @@ function AdminShell({
             <div className="flex min-w-0 items-center gap-3">
               <SidebarTrigger className="shrink-0 md:hidden" />
               <div className="min-w-0">
-                <h1 className="truncate font-heading text-5xl font-bold tracking-tight text-white max-md:text-3xl">
+                <h1 className="truncate font-heading text-2xl font-bold tracking-tight text-white">
                   {pageTitle}
                 </h1>
-                <p className="mt-1 text-lg text-zinc-400 max-md:text-sm">{subtitle}</p>
+                <p className="mt-1 text-sm leading-relaxed text-zinc-400">{subtitle}</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
               {action}
-              <span className="hidden rounded-md border border-white/10 bg-slate-700/30 px-4 py-2 text-base text-zinc-300 lg:inline-flex">
+              <span className="hidden rounded-md border border-white/10 bg-slate-700/30 px-4 py-2 text-xs text-zinc-300 lg:inline-flex">
                 {dateLabel}
               </span>
               <Button variant="ghost" size="icon-sm" className="text-zinc-300 lg:hidden">

@@ -38,9 +38,9 @@ function ArtistsPage() {
                 <StatusPill label={artist.status} className="absolute right-3 top-3" />
               </div>
               <div className="space-y-2 p-4">
-                <h3 className="line-clamp-1 text-3xl font-bold text-white">{artist.name}</h3>
-                <p className="line-clamp-2 text-base text-zinc-300">{artist.bio}</p>
-                <p className="inline-flex items-center gap-1 text-base text-zinc-400">
+                <h3 className="line-clamp-1 text-xl font-bold tracking-tight text-white md:text-2xl">{artist.name}</h3>
+                <p className="line-clamp-2 text-sm text-zinc-300 md:text-base">{artist.bio}</p>
+                <p className="inline-flex items-center gap-1 text-sm text-zinc-400 md:text-base">
                   <Music2 className="size-4" /> {artist.tracks} tracks
                 </p>
                 <Button variant="secondary" className="mt-2 w-full bg-slate-600 text-white hover:bg-slate-500">

@@ -30,7 +30,7 @@ function GenresPage() {
           <Card key={stat.label} className="border border-blue-900/30 bg-slate-950/85">
             <CardContent className="p-5">
               <p className="text-sm text-zinc-400">{stat.label}</p>
-              <p className="mt-2 text-4xl font-bold text-white">{stat.value}</p>
+              <p className="mt-2 text-2xl font-bold tracking-tight text-white md:text-3xl">{stat.value}</p>
             </CardContent>
           </Card>
         ))}
@@ -59,14 +59,14 @@ function GenresPage() {
                     <Tag className="size-6" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white">{genre.name}</h3>
+                    <h3 className="text-lg font-bold tracking-tight text-white md:text-xl">{genre.name}</h3>
                     <p className="text-sm text-zinc-400">{genre.tracks} tracks</p>
                   </div>
                 </div>
                 <StatusPill label={genre.status} />
               </div>
 
-              <p className="text-base leading-7 text-zinc-300">{genre.description}</p>
+              <p className="text-sm leading-7 text-zinc-300 md:text-base">{genre.description}</p>
 
               <div className="grid grid-cols-3 gap-2">
                 <Button className="bg-blue-600 text-white hover:bg-blue-500">View</Button>

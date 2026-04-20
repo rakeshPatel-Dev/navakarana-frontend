@@ -38,7 +38,7 @@ function SubscriptionsPage() {
           <Card key={stat.label} className="border border-blue-900/30 bg-slate-950/85">
             <CardContent className="p-5">
               <p className="text-sm text-zinc-400">{stat.label}</p>
-              <p className="mt-2 text-4xl font-bold text-white">{stat.value}</p>
+              <p className="mt-2 text-2xl font-bold tracking-tight text-white md:text-3xl">{stat.value}</p>
             </CardContent>
           </Card>
         ))}
@@ -49,8 +49,8 @@ function SubscriptionsPage() {
           <CardContent className="p-5">
             <div className="mb-4 flex items-center justify-between gap-3">
               <div>
-                <h2 className="text-3xl font-bold text-white">Active subscriptions by plan</h2>
-                <p className="text-base text-zinc-400">Current plan distribution across subscribers</p>
+                <h2 className="text-xl font-bold tracking-tight text-white md:text-2xl">Active subscriptions by plan</h2>
+                <p className="text-sm text-zinc-400 md:text-base">Current plan distribution across subscribers</p>
               </div>
               <StatusPill label="Live" tone="green" />
             </div>
@@ -59,11 +59,11 @@ function SubscriptionsPage() {
                 <div key={item.title} className="rounded-xl border border-white/10 bg-slate-900/70 px-4 py-4">
                   <div className="flex items-center justify-between gap-4">
                     <div>
-                      <p className="text-xl font-semibold text-white">{item.title}</p>
+                      <p className="text-base font-semibold text-white md:text-lg">{item.title}</p>
                       <p className="text-sm text-zinc-400">{item.subtitle}</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-2xl font-bold text-white">{item.value}</p>
+                      <p className="text-lg font-bold tracking-tight text-white md:text-xl">{item.value}</p>
                       <p className="text-sm text-zinc-400">share of active base</p>
                     </div>
                   </div>
@@ -80,18 +80,18 @@ function SubscriptionsPage() {
                 <BadgeDollarSign className="size-6" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-white">Revenue snapshot</p>
-                <p className="text-base text-zinc-400">Latest subscriber activity</p>
+                <p className="text-xl font-bold tracking-tight text-white md:text-2xl">Revenue snapshot</p>
+                <p className="text-sm text-zinc-400 md:text-base">Latest subscriber activity</p>
               </div>
             </div>
             <div className="mt-5 space-y-3">
               {recentSubscriptions.map((item) => (
                 <div key={item.email} className="flex items-center justify-between rounded-xl border border-white/10 bg-slate-900/70 px-4 py-4">
                   <div>
-                    <p className="text-base font-semibold text-white">{item.name}</p>
+                    <p className="text-sm font-semibold text-white md:text-base">{item.name}</p>
                     <p className="text-sm text-zinc-400">{item.plan}</p>
                   </div>
-                  <p className="text-sm text-zinc-400">{item.when}</p>
+                  <p className="text-xs text-zinc-400 md:text-sm">{item.when}</p>
                 </div>
               ))}
             </div>
@@ -115,25 +115,25 @@ function SubscriptionsPage() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Subscriber</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Plan</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Amount</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Cycle</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Started</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Status</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Subscriber</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Plan</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Amount</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Cycle</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Started</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Status</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {subscriptionHistory.map((subscription) => (
                 <TableRow key={subscription.email}>
                   <TableCell className="px-4 py-4">
-                    <p className="text-base font-semibold text-white">{subscription.name}</p>
+                    <p className="text-sm font-semibold text-white md:text-base">{subscription.name}</p>
                     <p className="text-sm text-zinc-400">{subscription.email}</p>
                   </TableCell>
-                  <TableCell className="px-4 py-4 text-base text-zinc-300">{subscription.plan}</TableCell>
-                  <TableCell className="px-4 py-4 text-base font-semibold text-emerald-400">{subscription.amount}</TableCell>
-                  <TableCell className="px-4 py-4 text-base text-zinc-300">{subscription.cycle}</TableCell>
-                  <TableCell className="px-4 py-4 text-base text-zinc-300">{subscription.started}</TableCell>
+                  <TableCell className="px-4 py-4 text-sm text-zinc-300 md:text-base">{subscription.plan}</TableCell>
+                  <TableCell className="px-4 py-4 text-sm font-semibold text-emerald-400 md:text-base">{subscription.amount}</TableCell>
+                  <TableCell className="px-4 py-4 text-sm text-zinc-300 md:text-base">{subscription.cycle}</TableCell>
+                  <TableCell className="px-4 py-4 text-sm text-zinc-300 md:text-base">{subscription.started}</TableCell>
                   <TableCell className="px-4 py-4">
                     <StatusPill
                       label={subscription.status}

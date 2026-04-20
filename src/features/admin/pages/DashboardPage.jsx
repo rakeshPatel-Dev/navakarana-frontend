@@ -36,7 +36,7 @@ function DashboardPage() {
       <section className="grid gap-4 xl:grid-cols-[1.05fr_1fr]">
         <Card className="border border-blue-900/30 bg-slate-950/85">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-4xl font-bold text-white max-md:text-2xl">
+            <CardTitle className="flex items-center gap-2 text-lg font-semibold tracking-tight text-white md:text-xl">
               <BarChart3 className="size-6 text-fuchsia-400" />
               Active Subscriptions by Plan
             </CardTitle>
@@ -45,10 +45,10 @@ function DashboardPage() {
             {activeSubscriptionsByPlan.map((item) => (
               <div key={item.title} className="flex items-center justify-between rounded-xl border border-white/10 bg-slate-900/70 px-4 py-4">
                 <div className="min-w-0">
-                  <p className="truncate text-3xl font-semibold text-white max-md:text-xl">{item.title}</p>
-                  <p className="text-base text-zinc-400">{item.subtitle}</p>
+                  <p className="truncate text-base font-semibold text-white">{item.title}</p>
+                  <p className="text-sm leading-relaxed text-zinc-400">{item.subtitle}</p>
                 </div>
-                <p className="text-3xl font-bold text-white max-md:text-xl">{item.value}</p>
+                <p className="text-xl font-semibold tracking-tight text-white">{item.value}</p>
               </div>
             ))}
           </CardContent>
@@ -56,7 +56,7 @@ function DashboardPage() {
 
         <Card className="border border-blue-900/30 bg-slate-950/85">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-4xl font-bold text-white max-md:text-2xl">
+            <CardTitle className="flex items-center gap-2 text-lg font-semibold tracking-tight text-white md:text-xl">
               <Music2 className="size-6 text-red-400" />
               Most Played Songs
             </CardTitle>
@@ -66,11 +66,11 @@ function DashboardPage() {
               <div key={song.title} className="flex items-center gap-3 rounded-xl border border-white/10 bg-slate-900/70 px-3 py-3">
                 <img src={song.cover} alt={song.title} className="size-14 rounded-lg object-cover" />
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-3xl font-semibold text-white max-md:text-xl">{song.title}</p>
-                  <p className="truncate text-base text-zinc-400">{song.artist}</p>
+                  <p className="truncate text-base font-semibold text-white">{song.title}</p>
+                  <p className="truncate text-sm text-zinc-400">{song.artist}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-2xl font-bold text-white">{song.plays}</p>
+                  <p className="text-lg font-semibold tracking-tight text-white">{song.plays}</p>
                   <p className="text-sm text-zinc-400">plays</p>
                 </div>
               </div>
@@ -82,7 +82,7 @@ function DashboardPage() {
       <section className="grid gap-4 xl:grid-cols-[1.05fr_1fr]">
         <Card className="border border-blue-900/30 bg-slate-950/85">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-4xl font-bold text-white max-md:text-2xl">
+            <CardTitle className="flex items-center gap-2 text-lg font-semibold tracking-tight text-white md:text-xl">
               <CalendarClock className="size-6 text-emerald-400" />
               Recent Subscriptions
             </CardTitle>
@@ -91,12 +91,12 @@ function DashboardPage() {
             {recentSubscriptions.map((item) => (
               <div key={item.email} className="flex items-center justify-between rounded-xl border border-white/10 bg-slate-900/70 px-4 py-4">
                 <div className="min-w-0">
-                  <p className="truncate text-xl font-semibold text-white">{item.name}</p>
-                  <p className="text-base text-zinc-400">{item.email}</p>
+                  <p className="truncate text-base font-semibold text-white">{item.name}</p>
+                  <p className="text-sm text-zinc-400">{item.email}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-xl font-semibold text-emerald-400">{item.plan}</p>
-                  <p className="text-base text-zinc-400">{item.when}</p>
+                  <p className="text-sm font-semibold text-emerald-400">{item.plan}</p>
+                  <p className="text-xs text-zinc-400">{item.when}</p>
                 </div>
               </div>
             ))}
@@ -105,7 +105,7 @@ function DashboardPage() {
 
         <Card className="border border-blue-900/30 bg-slate-950/85">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-4xl font-bold text-white max-md:text-2xl">
+            <CardTitle className="flex items-center gap-2 text-lg font-semibold tracking-tight text-white md:text-xl">
               <DollarSign className="size-6 text-emerald-400" />
               Top Selling Songs
             </CardTitle>
@@ -115,11 +115,11 @@ function DashboardPage() {
               <div key={song.title} className="flex items-center gap-3 rounded-xl border border-white/10 bg-slate-900/70 px-3 py-3">
                 <img src={song.cover} alt={song.title} className="size-14 rounded-lg object-cover" />
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-3xl font-semibold text-white max-md:text-xl">{song.title}</p>
-                  <p className="text-base text-zinc-400">{song.price}</p>
+                  <p className="truncate text-base font-semibold text-white">{song.title}</p>
+                  <p className="text-sm text-zinc-400">{song.price}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-2xl font-bold text-white">{song.sales}</p>
+                  <p className="text-lg font-semibold tracking-tight text-white">{song.sales}</p>
                   <p className="text-sm text-zinc-400">sales</p>
                 </div>
               </div>
@@ -130,7 +130,7 @@ function DashboardPage() {
 
       <Card className="border border-blue-900/30 bg-slate-950/85">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-4xl font-bold text-white max-md:text-2xl">
+          <CardTitle className="flex items-center gap-2 text-lg font-semibold tracking-tight text-white md:text-xl">
             <ScrollText className="size-6 text-blue-400" />
             Recent Purchases
           </CardTitle>
@@ -139,26 +139,26 @@ function DashboardPage() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">User</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Music</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Amount</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Transaction ID</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Date</TableHead>
+                <TableHead className="px-4 py-4 text-xs font-medium uppercase tracking-wide text-zinc-300">User</TableHead>
+                <TableHead className="px-4 py-4 text-xs font-medium uppercase tracking-wide text-zinc-300">Music</TableHead>
+                <TableHead className="px-4 py-4 text-xs font-medium uppercase tracking-wide text-zinc-300">Amount</TableHead>
+                <TableHead className="px-4 py-4 text-xs font-medium uppercase tracking-wide text-zinc-300">Transaction ID</TableHead>
+                <TableHead className="px-4 py-4 text-xs font-medium uppercase tracking-wide text-zinc-300">Date</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {purchases.map((purchase) => (
                 <TableRow key={purchase.id}>
                   <TableCell className="px-4 py-4">
-                    <p className="text-xl font-semibold text-white">{purchase.user}</p>
+                    <p className="text-base font-semibold text-white">{purchase.user}</p>
                     <p className="text-sm text-zinc-400">{purchase.email}</p>
                   </TableCell>
-                  <TableCell className="px-4 py-4 text-2xl font-semibold text-white max-md:text-base">{purchase.music}</TableCell>
-                  <TableCell className="px-4 py-4 text-3xl font-semibold text-emerald-400 max-md:text-xl">{purchase.amount}</TableCell>
+                  <TableCell className="px-4 py-4 text-base font-semibold text-white">{purchase.music}</TableCell>
+                  <TableCell className="px-4 py-4 text-base font-semibold tracking-tight text-emerald-400">{purchase.amount}</TableCell>
                   <TableCell className="px-4 py-4">
-                    <span className="rounded-md bg-blue-500/20 px-3 py-1 text-sm text-blue-200">{purchase.id}</span>
+                    <span className="rounded-md bg-blue-500/20 px-3 py-1 text-xs font-medium text-blue-200">{purchase.id}</span>
                   </TableCell>
-                  <TableCell className="px-4 py-4 text-base text-zinc-300">{purchase.date}</TableCell>
+                  <TableCell className="px-4 py-4 text-sm text-zinc-300">{purchase.date}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

@@ -23,7 +23,7 @@ function SubscriptionPlansPage() {
           <Card key={stat.label} className="border border-blue-900/30 bg-slate-950/85">
             <CardContent className="p-5">
               <p className="text-sm text-zinc-400">{stat.label}</p>
-              <p className="mt-2 text-4xl font-bold text-white">{stat.value}</p>
+              <p className="mt-2 text-2xl font-bold tracking-tight text-white md:text-3xl">{stat.value}</p>
             </CardContent>
           </Card>
         ))}
@@ -48,19 +48,19 @@ function SubscriptionPlansPage() {
             <CardContent className="space-y-4 p-5">
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <h3 className="text-3xl font-bold text-white">{plan.name}</h3>
-                  <p className="mt-1 text-base text-zinc-400">{plan.description}</p>
+                  <h3 className="text-xl font-bold tracking-tight text-white md:text-2xl">{plan.name}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-zinc-400 md:text-base">{plan.description}</p>
                 </div>
                 {plan.featured ? <StatusPill label="Featured" tone="yellow" /> : <StatusPill label="Live" tone="green" />}
               </div>
 
               <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
                 <p className="text-sm text-zinc-400">Price</p>
-                <p className="mt-1 text-4xl font-bold text-white">{plan.price}</p>
-                <p className="text-base text-zinc-400">{plan.period} billing</p>
+                <p className="mt-1 text-2xl font-bold tracking-tight text-white md:text-3xl">{plan.price}</p>
+                <p className="text-sm text-zinc-400 md:text-base">{plan.period} billing</p>
               </div>
 
-              <div className="flex flex-wrap gap-3 text-sm text-zinc-300">
+              <div className="flex flex-wrap gap-3 text-xs text-zinc-300 md:text-sm">
                 <span className="rounded-full border border-white/10 px-3 py-1">{plan.activeSubscribers} active subscribers</span>
                 <span className="rounded-full border border-white/10 px-3 py-1">Trial: {plan.trial}</span>
                 <span className="rounded-full border border-white/10 px-3 py-1">Cycle: {plan.billingPeriod}</span>
@@ -68,7 +68,7 @@ function SubscriptionPlansPage() {
 
               <div className="space-y-2 rounded-2xl border border-white/10 bg-slate-900/70 p-4">
                 {plan.features.map((feature) => (
-                  <div key={feature} className="flex items-center gap-2 text-base text-zinc-200">
+                  <div key={feature} className="flex items-center gap-2 text-sm text-zinc-200 md:text-base">
                     <Check className="size-4 text-emerald-400" />
                     {feature}
                   </div>

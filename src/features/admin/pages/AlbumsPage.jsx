@@ -30,7 +30,7 @@ function AlbumsPage() {
           <Card key={stat.label} className="border border-blue-900/30 bg-slate-950/85">
             <CardContent className="p-5">
               <p className="text-sm text-zinc-400">{stat.label}</p>
-              <p className="mt-2 text-4xl font-bold text-white">{stat.value}</p>
+              <p className="mt-2 text-2xl font-bold tracking-tight text-white md:text-3xl">{stat.value}</p>
             </CardContent>
           </Card>
         ))}
@@ -55,12 +55,12 @@ function AlbumsPage() {
               <div className="space-y-3 p-4">
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
-                    <h3 className="truncate text-2xl font-bold text-white">{album.title}</h3>
-                    <p className="mt-1 text-base text-zinc-400">{album.description}</p>
+                    <h3 className="truncate text-lg font-bold tracking-tight text-white md:text-xl">{album.title}</h3>
+                    <p className="mt-1 text-sm text-zinc-400 md:text-base">{album.description}</p>
                   </div>
                   <StatusPill label={album.status} />
                 </div>
-                <div className="flex items-center justify-between text-base text-zinc-300">
+                <div className="flex items-center justify-between text-sm text-zinc-300 md:text-base">
                   <span className="inline-flex items-center gap-1"><Album className="size-4" /> {album.tracks} tracks</span>
                   <span className="font-semibold text-emerald-400">Published</span>
                 </div>

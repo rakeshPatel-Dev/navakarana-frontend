@@ -19,7 +19,7 @@ function MetricCard({ label, value, tone = "slate" }) {
   return (
     <div className={cn("rounded-2xl border bg-linear-to-r p-5", toneClasses[tone] || toneClasses.slate)}>
       <p className="text-sm text-zinc-300">{label}</p>
-      <p className="mt-2 text-5xl font-bold text-white max-md:text-4xl">{value}</p>
+      <p className="mt-2 text-2xl font-bold tracking-tight text-white">{value}</p>
     </div>
   )
 }

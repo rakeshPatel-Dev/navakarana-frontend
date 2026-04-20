@@ -31,7 +31,7 @@ function CouponsPage() {
           <Card key={stat.label} className="border border-blue-900/30 bg-slate-950/85">
             <CardContent className="p-5">
               <p className="text-sm text-zinc-400">{stat.label}</p>
-              <p className="mt-2 text-4xl font-bold text-white">{stat.value}</p>
+              <p className="mt-2 text-2xl font-bold tracking-tight text-white md:text-3xl">{stat.value}</p>
             </CardContent>
           </Card>
         ))}
@@ -53,27 +53,27 @@ function CouponsPage() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Code</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Recipient</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Assigned To</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Songs</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Access</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Expires</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Status</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Code</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Recipient</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Assigned To</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Songs</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Access</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Expires</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Status</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {coupons.map((coupon) => (
                 <TableRow key={coupon.code}>
-                  <TableCell className="px-4 py-4 text-base font-semibold text-white">{coupon.code}</TableCell>
+                  <TableCell className="px-4 py-4 text-sm font-semibold text-white md:text-base">{coupon.code}</TableCell>
                   <TableCell className="px-4 py-4">
-                    <p className="text-base font-semibold text-white">{coupon.name}</p>
+                    <p className="text-sm font-semibold text-white md:text-base">{coupon.name}</p>
                     <p className="text-sm text-zinc-400">{coupon.email}</p>
                   </TableCell>
-                  <TableCell className="px-4 py-4 text-base text-zinc-300">{coupon.assignedTo}</TableCell>
-                  <TableCell className="px-4 py-4 text-base text-zinc-300">{coupon.songs}</TableCell>
-                  <TableCell className="px-4 py-4 text-base text-zinc-300">{coupon.access}</TableCell>
-                  <TableCell className="px-4 py-4 text-base text-zinc-300">{coupon.expires}</TableCell>
+                  <TableCell className="px-4 py-4 text-sm text-zinc-300 md:text-base">{coupon.assignedTo}</TableCell>
+                  <TableCell className="px-4 py-4 text-sm text-zinc-300 md:text-base">{coupon.songs}</TableCell>
+                  <TableCell className="px-4 py-4 text-sm text-zinc-300 md:text-base">{coupon.access}</TableCell>
+                  <TableCell className="px-4 py-4 text-sm text-zinc-300 md:text-base">{coupon.expires}</TableCell>
                   <TableCell className="px-4 py-4">
                     <StatusPill label={coupon.status} tone="green" />
                   </TableCell>

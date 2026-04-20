@@ -44,11 +44,11 @@ function VideoLibrary() {
               </div>
 
               <div className="space-y-3 p-4">
-                <h3 className="text-3xl font-bold text-white">{video.title}</h3>
-                <p className="text-lg text-zinc-300">{video.artist}</p>
+                <h3 className="text-xl font-bold tracking-tight text-white md:text-2xl">{video.title}</h3>
+                <p className="text-sm text-zinc-300 md:text-base">{video.artist}</p>
                 <div className="flex items-center justify-between text-zinc-300">
-                  <span className="inline-flex items-center gap-1 text-base"><Eye className="size-4" /> {video.views}</span>
-                  <span className="text-2xl font-bold text-emerald-400">{video.price}</span>
+                  <span className="inline-flex items-center gap-1 text-sm md:text-base"><Eye className="size-4" /> {video.views}</span>
+                  <span className="text-lg font-bold tracking-tight text-emerald-400 md:text-xl">{video.price}</span>
                 </div>
 
                 <div className="grid grid-cols-3 gap-2">

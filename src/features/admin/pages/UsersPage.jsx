@@ -38,7 +38,7 @@ function UsersPage() {
           <Card key={stat.label} className="border border-blue-900/30 bg-slate-950/85">
             <CardContent className="p-5">
               <p className="text-sm text-zinc-400">{stat.label}</p>
-              <p className="mt-2 text-4xl font-bold text-white">{stat.value}</p>
+              <p className="mt-2 text-2xl font-bold tracking-tight text-white md:text-3xl">{stat.value}</p>
             </CardContent>
           </Card>
         ))}
@@ -60,12 +60,12 @@ function UsersPage() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">User</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Role</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Plan</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Last Active</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Revenue</TableHead>
-                <TableHead className="px-4 py-4 text-base text-zinc-300">Status</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">User</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Role</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Plan</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Last Active</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Revenue</TableHead>
+                <TableHead className="px-4 py-4 text-sm font-medium uppercase tracking-wide text-zinc-300">Status</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -77,15 +77,15 @@ function UsersPage() {
                         <UserRound className="size-5" />
                       </div>
                       <div>
-                        <p className="text-base font-semibold text-white">{user.name}</p>
+                        <p className="text-sm font-semibold text-white md:text-base">{user.name}</p>
                         <p className="text-sm text-zinc-400">{user.email}</p>
                       </div>
                     </div>
                   </TableCell>
-                  <TableCell className="px-4 py-4 text-base text-zinc-300">{user.role}</TableCell>
-                  <TableCell className="px-4 py-4 text-base text-zinc-300">{user.plan}</TableCell>
-                  <TableCell className="px-4 py-4 text-base text-zinc-300">{user.lastActive}</TableCell>
-                  <TableCell className="px-4 py-4 text-base font-semibold text-emerald-400">{user.revenue}</TableCell>
+                  <TableCell className="px-4 py-4 text-sm text-zinc-300 md:text-base">{user.role}</TableCell>
+                  <TableCell className="px-4 py-4 text-sm text-zinc-300 md:text-base">{user.plan}</TableCell>
+                  <TableCell className="px-4 py-4 text-sm text-zinc-300 md:text-base">{user.lastActive}</TableCell>
+                  <TableCell className="px-4 py-4 text-sm font-semibold text-emerald-400 md:text-base">{user.revenue}</TableCell>
                   <TableCell className="px-4 py-4">
                     <StatusPill
                       label={user.status}
