@@ -11,4 +11,23 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          if (id.includes('node_modules/react')) {
+            return 'react-vendor';
+          }
+          if (id.includes('node_modules/react-router')) {
+            return 'router';
+          }
+          if (id.includes('node_modules/@radix-ui')) {
+            return 'ui';
+          }
+        },
+      },
+    },
+  },
 })
