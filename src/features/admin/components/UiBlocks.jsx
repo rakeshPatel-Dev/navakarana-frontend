@@ -54,15 +54,15 @@ function FilterPanel({ children, className }) {
   )
 }
 
-function FilterSelect({ placeholder, options = [], className }) {
+function FilterSelect({ placeholder, options = [], className, onChange }) {
   return (
-    <Select defaultValue={options[0] ?? placeholder}>
+    <Select defaultValue={options[0] ?? placeholder} onValueChange={onChange}>
       <SelectTrigger className={cn("w-full bg-slate-900 text-zinc-200", className)}>
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent>
         {options.map((option) => (
-          <SelectItem key={option} value={option.toLowerCase().replace(/\s+/g, "-")}>
+          <SelectItem key={option} value={option}>
             {option}
           </SelectItem>
         ))}

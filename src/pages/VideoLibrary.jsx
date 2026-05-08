@@ -5,9 +5,24 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import { AdminShell } from "@/features/admin/components/AdminShell"
 import { FilterPanel, FilterSelect, StatusPill } from "@/features/admin/components/UiBlocks"
-import { videoItems } from "@/features/admin/data/mockData"
+import { useDispatch, useSelector } from "react-redux";
+import { fetchVideos } from "@/redux/features/videos/videoSlice";
+import { useEffect } from "react";
 
 function VideoLibrary() {
+
+
+  const dispatch = useDispatch()
+
+  const { videos, loading, error } = useSelector((state) => state.videos);
+
+  useEffect(() => {
+    dispatch(fetchVideos());
+  }, [dispatch]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
   return (
     <AdminShell
       title="Video Library"
@@ -34,21 +49,24 @@ function VideoLibrary() {
       </FilterPanel>
 
       <section className="grid gap-4 xl:grid-cols-3">
-        {videoItems.map((video) => (
-          <Card key={video.title} className="border border-blue-900/30 bg-slate-950/85">
+        {videos.length === 0 && <p className="text-sm text-zinc-400">No videos found.</p>}
+        {videos.map((v) => (
+          <Card key={v.title} className="border border-blue-900/30 bg-slate-950/85">
             <CardContent className="p-0">
               <div className="relative">
-                <img src={video.cover} alt={video.title} className="h-72 w-full rounded-t-xl object-cover" />
-                <span className="absolute left-3 top-3 rounded-md bg-blue-700 px-2 py-1 text-xs text-white">{video.quality}</span>
-                <StatusPill label={video.status} className="absolute right-3 top-3" />
+                <img src={v.thumbnail} alt={v.title} className="h-72 w-full rounded-t-xl object-cover" />
+                <span className="absolute left-3 top-3 rounded-md bg-blue-700 px-2 py-1 text-xs text-white">
+                  {v.resolution ?? "N/A"}
+                </span>
+                <StatusPill label={v.can_access ? "Accessible" : "Locked"} className="absolute right-3 top-3" />
               </div>
 
               <div className="space-y-3 p-4">
-                <h3 className="text-xl font-bold tracking-tight text-white md:text-2xl">{video.title}</h3>
-                <p className="text-sm text-zinc-300 md:text-base">{video.artist}</p>
+                <h3 className="text-xl font-bold tracking-tight text-white md:text-2xl">{v.title}</h3>
+                <p className="line-clamp-3 text-sm text-zinc-300 md:text-base">{v.description}</p>
                 <div className="flex items-center justify-between text-zinc-300">
-                  <span className="inline-flex items-center gap-1 text-sm md:text-base"><Eye className="size-4" /> {video.views}</span>
-                  <span className="text-lg font-bold tracking-tight text-emerald-400 md:text-xl">{video.price}</span>
+                  <span className="inline-flex items-center gap-1 text-base"><Eye className="size-4" /> {v.views_count ?? 0}</span>
+                  <span className="text-lg font-bold tracking-tight text-emerald-400 md:text-xl">{v.price}</span>
                 </div>
 
                 <div className="grid grid-cols-3 gap-2">
